@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+    }
+}
+jar {
+    manifest {
+        attributes 'Main-Class': 'Assign3'
+    }
+}
+
+run {   /* Run with: gradle run -PrunArgs="arg1 arg2 arg3" */
+    if (project.hasProperty('runArgs')) {
+        args project.getProperty('runArgs').split()
+    }
+}
+
+mainClassName = 'Assign3'
